@@ -13,6 +13,11 @@ const config = {
     cvUrl: process.env.CV_URL,
     linkedinUrl: process.env.LINKEDIN_URL,
   },
+  urls: {
+    productionAppUrl: process.env.PRODUCTION_APP_URL,
+    localAppUrl: process.env.LOCAL_APP_URL,
+  },
+  env: process.env.NODE_ENV,
 } as const;
 
 export default config;
