@@ -235,7 +235,8 @@ export default function EmailTemplateForm() {
                 Application Details
               </CardTitle>
               <CardDescription>
-                Information about the position and company you're applying to
+                Information about the position and company you&apos;re applying
+                to
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -301,7 +302,7 @@ export default function EmailTemplateForm() {
                         <Input type="date" {...field} className="bg-gray-50" />
                       </FormControl>
                       <FormDescription>
-                        Defaults to today's date
+                        Defaults to today&apos;s date
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
