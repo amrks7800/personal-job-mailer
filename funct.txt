@@ -1,0 +1,213 @@
+const applicationTemplate = ({
+  APPLICANT_NAME,
+  CURRENT_TITLE,
+  EMAIL,
+  PHONE,
+  LOCATION,
+  HR_NAME,
+  HR_TITLE,
+  COMPANY_NAME,
+  ROLE_TITLE,
+  YEARS_EXPERIENCE,
+  FIELD,
+  MAIN_PARAGRAPH,
+  COMPANY_ATTRACTION,
+  COMPANY_ACHIEVEMENT,
+  PREVIOUS_ROLE,
+  PREVIOUS_COMPANY,
+  ACHIEVEMENT_1,
+  ACHIEVEMENT_2,
+  LINKEDIN_URL,
+  GITHUB_URL,
+  WEBSITE_URL,
+}: {
+  APPLICANT_NAME: string;
+  CURRENT_TITLE: string;
+  EMAIL: string;
+  PHONE: string;
+  LOCATION: string;
+  HR_NAME: string;
+  HR_TITLE: string;
+  COMPANY_NAME: string;
+  ROLE_TITLE: string;
+  YEARS_EXPERIENCE: string;
+  FIELD: string;
+  MAIN_PARAGRAPH: string;
+  COMPANY_ATTRACTION: string;
+  COMPANY_ACHIEVEMENT: string;
+  PREVIOUS_ROLE: string;
+  PREVIOUS_COMPANY: string;
+  ACHIEVEMENT_1: string;
+  ACHIEVEMENT_2: string;
+  LINKEDIN_URL: string;
+  GITHUB_URL: string;
+  WEBSITE_URL: string;
+}) => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${APPLICANT_NAME} - Application for ${ROLE_TITLE}</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+    
+    <!-- Main Container -->
+    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        
+        <!-- Header Section -->
+        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff9ff3 100%); padding: 40px 30px; text-align: center; position: relative; overflow: hidden;">
+            <!-- Decorative Elements -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.7;"></div>
+            <div style="position: absolute; bottom: -30px; left: -30px; width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 50%; opacity: 0.5;"></div>
+            
+            <!-- Profile Image -->
+            <img src="/placeholder.svg?height=120&width=120" alt="${APPLICANT_NAME}" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.3); margin-bottom: 20px; object-fit: cover;">
+            
+            <!-- Name and Title -->
+            <h1 style="color: white; margin: 0 0 10px 0; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${APPLICANT_NAME}</h1>
+            <p style="color: rgba(255,255,255,0.9); margin: 0 0 20px 0; font-size: 18px; font-weight: 300;">${CURRENT_TITLE}</p>
+            
+            <!-- Contact Info -->
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                <a href="mailto:${EMAIL}" style="color: white; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+                    <img src="/placeholder.svg?height=16&width=16" alt="Email" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    ${EMAIL}
+                </a>
+                <a href="tel:${PHONE}" style="color: white; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+                    <img src="/placeholder.svg?height=16&width=16" alt="Phone" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    ${PHONE}
+                </a>
+                <span style="color: white; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+                    <img src="/placeholder.svg?height=16&width=16" alt="Location" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    ${LOCATION}
+                </span>
+            </div>
+        </div>
+
+        <!-- Application Header -->
+        <div style="padding: 40px 30px; background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; text-align: center;">
+            <h2 style="margin: 0 0 15px 0; font-size: 24px; font-weight: 600;">Application for ${ROLE_TITLE}</h2>
+            <p style="margin: 0 0 10px 0; font-size: 18px; opacity: 0.9;">at</p>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">${COMPANY_NAME}</h3>
+            <p style="margin: 15px 0 0 0; font-size: 14px; opacity: 0.8;">${new Date().toLocaleDateString()}</p>
+        </div>
+
+        <!-- Letter Content -->
+        <div style="padding: 50px 40px; background: #f8f9fa;">
+            <!-- Greeting -->
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #2d3436; margin: 0 0 5px 0; font-size: 18px; font-weight: 600;">Dear ${HR_NAME},</h3>
+                <p style="color: #636e72; margin: 0; font-size: 14px; font-style: italic;">${HR_TITLE} at ${COMPANY_NAME}</p>
+            </div>
+
+            <!-- Letter Body -->
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid #00cec9; margin-bottom: 40px;">
+                <!-- Opening Paragraph -->
+                <p style="color: #2d3436; line-height: 1.8; margin: 0 0 25px 0; font-size: 16px;">
+                    I am writing to express my strong interest in the <strong style="color: #0984e3;">${ROLE_TITLE}</strong> position at <strong style="color: #e17055;">${COMPANY_NAME}</strong>. 
+                    With ${YEARS_EXPERIENCE} years of experience in ${FIELD}, I am excited about the opportunity to contribute to your team and help drive ${COMPANY_NAME}'s continued success.
+                </p>
+
+                <!-- Main Content -->
+                <p style="color: #2d3436; line-height: 1.8; margin: 0 0 25px 0; font-size: 16px;">
+                    ${MAIN_PARAGRAPH}
+                </p>
+
+                <!-- Why Company -->
+                <p style="color: #2d3436; line-height: 1.8; margin: 0 0 25px 0; font-size: 16px;">
+                    What particularly attracts me to ${COMPANY_NAME} is ${COMPANY_ATTRACTION}. I am impressed by ${COMPANY_ACHIEVEMENT} and would be thrilled to contribute to such innovative work.
+                </p>
+
+                <!-- Value Proposition -->
+                <p style="color: #2d3436; line-height: 1.8; margin: 0 0 25px 0; font-size: 16px;">
+                    In my previous role as ${PREVIOUS_ROLE} at ${PREVIOUS_COMPANY}, I ${ACHIEVEMENT_1}. Additionally, I ${ACHIEVEMENT_2}. These experiences have prepared me well for the challenges and opportunities that come with the ${ROLE_TITLE} position.
+                </p>
+
+                <!-- Closing -->
+                <p style="color: #2d3436; line-height: 1.8; margin: 0; font-size: 16px;">
+                    I would welcome the opportunity to discuss how my background, skills, and enthusiasm can contribute to ${COMPANY_NAME}'s goals. Thank you for considering my application. I look forward to hearing from you soon.
+                </p>
+            </div>
+
+            <!-- Document Buttons -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #2d3436; margin: 0 0 25px 0; font-size: 20px; font-weight: 600;">Application Documents</h3>
+                
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                    <!-- CV Button -->
+                    <a href="${
+                      CV_URL || "#"
+                    }" style="background: linear-gradient(135deg, #ff7675 0%, #e84393 100%); color: white; padding: 20px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; gap: 15px; box-shadow: 0 15px 35px rgba(255, 118, 117, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 180px; justify-content: center;">
+                        <img src="/placeholder.svg?height=24&width=24" alt="CV" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                        <span>View My CV</span>
+                    </a>
+
+                    <!-- Portfolio Button -->
+                    <a href="${
+                      PORTFOLIO_URL || "#"
+                    }" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 20px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; gap: 15px; box-shadow: 0 15px 35px rgba(116, 185, 255, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 180px; justify-content: center;">
+                        <img src="/placeholder.svg?height=24&width=24" alt="Portfolio" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                        <span>View Portfolio</span>
+                    </a>
+                </div>
+
+                <p style="color: #636e72; margin: 20px 0 0 0; font-size: 14px; font-style: italic;">
+                    Click the buttons above to access my complete CV and portfolio
+                </p>
+            </div>
+
+            <!-- Professional Signature -->
+            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                <p style="color: #2d3436; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">Best regards,</p>
+                <p style="color: #0984e3; margin: 0 0 15px 0; font-size: 20px; font-weight: 700;">Amr khalid</p>
+                
+                <!-- Social Links -->
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                    <a href="${LINKEDIN_URL}" style="color: #0984e3; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 5px; padding: 8px 15px; background: #f1f3f4; border-radius: 20px; transition: background 0.3s ease;">
+                        <img src="/placeholder.svg?height=16&width=16" alt="LinkedIn" style="width: 16px; height: 16px;">
+                        LinkedIn
+                    </a>
+                    <a href="${GITHUB_URL}" style="color: #2d3436; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 5px; padding: 8px 15px; background: #f1f3f4; border-radius: 20px; transition: background 0.3s ease;">
+                        <img src="/placeholder.svg?height=16&width=16" alt="GitHub" style="width: 16px; height: 16px;">
+                        GitHub
+                    </a>
+                    <a href="${WEBSITE_URL}" style="color: #00b894; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 5px; padding: 8px 15px; background: #f1f3f4; border-radius: 20px; transition: background 0.3s ease;">
+                        <img src="/placeholder.svg?height=16&width=16" alt="Website" style="width: 16px; height: 16px;">
+                        Website
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Footer -->
+        <div style="padding: 40px 30px; background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%); text-align: center;">
+            <h3 style="color: white; margin: 0 0 15px 0; font-size: 22px; font-weight: 700;">Ready to Discuss This Opportunity?</h3>
+            <p style="color: rgba(255,255,255,0.9); margin: 0 0 25px 0; font-size: 16px; line-height: 1.6;">
+                I'm available for an interview at your convenience and excited to learn more about how I can contribute to ${COMPANY_NAME}.
+            </p>
+            <a href="mailto:${EMAIL}?subject=Re: ${encodeURIComponent(
+  ROLE_TITLE
+)} Application - ${encodeURIComponent(
+  APPLICANT_NAME
+)}" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 16px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 10px;">
+                <img src="/placeholder.svg?height=18&width=18" alt="Email" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
+                Schedule Interview
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding: 25px; background: #2d3436; text-align: center;">
+            <p style="color: #b2bec3; margin: 0 0 5px 0; font-size: 14px;">
+                Thank you for your time and consideration.
+            </p>
+            <p style="color: #636e72; margin: 0; font-size: 12px;">
+                This application was sent on ${new Date().toLocaleDateString()} for the ${ROLE_TITLE} position at ${COMPANY_NAME}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+`;
+
+export default applicationTemplate;
