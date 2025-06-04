@@ -6,10 +6,12 @@ import { EmailTemplateFormData } from "@/components/email-template-form";
 import config from "@/config/env";
 
 // URL to the CV
-const cvUrl =
-  config.env === "production"
-    ? `${config.urls.productionAppUrl}/AMR_KHALED_CV_2.pdf`
-    : `${config.urls.localAppUrl}/AMR_KHALED_CV_2.pdf`;
+// const cvUrl =
+//   config.env === "production"
+//     ? `${config.urls.productionAppUrl}/AMR_KHALED_CV_2.pdf`
+//     : `${config.urls.localAppUrl}/AMR_KHALED_CV_2.pdf`;
+
+const cvUrl = `${config.urls.productionAppUrl}/AMR_KHALED_CV_2.pdf`;
 
 export async function sendEmail(data: EmailTemplateFormData) {
   try {
