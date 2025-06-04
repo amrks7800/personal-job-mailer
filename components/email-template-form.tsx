@@ -111,6 +111,7 @@ export default function EmailTemplateForm() {
       toast.success(result.message);
     } else {
       toast.error(result.message);
+      console.error("Error sending email:", JSON.parse(result.error || ""));
     }
 
     setLoading(false);
