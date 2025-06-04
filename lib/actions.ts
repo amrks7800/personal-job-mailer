@@ -62,6 +62,7 @@ export async function sendEmail(data: EmailTemplateFormData) {
     return {
       success: false,
       message: "Failed to send email. Please try again.",
+      error: JSON.stringify(error),
     };
   }
 }
