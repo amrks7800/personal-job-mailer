@@ -58,6 +58,8 @@ export async function sendEmail(data: EmailTemplateFormData) {
         LINKEDIN_URL: config.links.linkedinUrl as string,
         GITHUB_URL: config.links.githubUrl as string,
         WEBSITE_URL: config.links.portfolioUrl as string,
+        CV_URL: cvUrl,
+        PORTFOLIO_URL: config.links.portfolioUrl as string,
       }),
     };
 
